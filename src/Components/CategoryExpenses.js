@@ -61,7 +61,7 @@ const CategoryExpenses = () => {
   
 
   return (
-    <div className="flex flex-col gap-5 w-[70%] ">
+    <div className="flex flex-col gap-3 w-[65%] ">
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-medium">Categories wise Expenses</h1>
       </div>

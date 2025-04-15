@@ -31,7 +31,7 @@ export default function TransactionList({ transactions, onDelete, onUpdate }) {
   }
 
   return (
-    <div className='min-h-[200px] mt-[45px] p-4 border rounded-lg w-[450px]'>
+    <div className='min-h-[200px] mt-[45px] p-4 border rounded-lg w-[400px] '>
     <div className='mt-6 mb-2 text-xl'>Expense List</div>
     <ul>
       {(transactions.length) === 0 ? <li>No transactions found.</li> :

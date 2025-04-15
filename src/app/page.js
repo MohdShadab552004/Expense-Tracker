@@ -11,7 +11,7 @@ import { CategoryContext } from '@/context/CategoryContext'
 export default function Home() {
   const [transactions, setTransactions] = useState([])
   const {setcategories} = useContext(CategoryContext)
-  
+
   // Fetch all transactions when page loads
   useEffect(() => {
     fetch('/api/transactions')
@@ -54,7 +54,7 @@ export default function Home() {
         <Budget expenses={total}/>
         <ExpenseChart data={chartData} />
       </div>
-      <div className='categories-list flex justify-between items-start p-6 mt-4 md:flex-col'>
+      <div className='categories-list flex justify-between items-start p-6 mt-4 '>
         <CategoryExpenses/>
         <TransactionList transactions={transactions} onDelete={deleteTransaction} onUpdate={updateTransaction}/>
       </div> 
