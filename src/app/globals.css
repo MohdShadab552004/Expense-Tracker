@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,17 +15,58 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ECF4F7;
     --foreground: #ededed;
   }
 }
-@media (max-width: 600px) {
-  .categories-list{
+@media (max-width: 1415px) {
+  .page-1{
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
   }
+  .transaction-form{
+    width: 470px;
+  }
+  .page-2{
+    flex-direction: column;
+    align-items: center;
+  }
+  .category-expenses{
+    width: 470px;
+  }
+  .category-cart{
+    width: 200px;
+  }
+}
+@media (max-width: 500px) {
+  
+  .transaction-form{
+    width: 380px;
+  }
+  .budjet{
+    width: 380px;
+  }
+  .category-chart{
+    width: 380px;
+  }
+  .page-2{
+    flex-direction: column;
+    align-items: center;
+  }
+  .transaction-list{
+    width: 380px;
+  }
+  .category-expenses{
+    width: 380px;
+  }
+  .category-cart{
+    width: 170px;
+  }
+  .category-cart-img{
+    width: 50px;
+    height: 50px;
+  }
+  
 }
 
 body {

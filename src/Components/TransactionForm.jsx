@@ -42,8 +42,10 @@ export default function TransactionForm({ onAdd }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3 p-4 h-[340px] border rounded-lg w-[400px]">
-      <h1 className="text-2xl font-bold text-center">📊 Personal Finance Visualizer</h1>
+    <form onSubmit={handleSubmit} className="transaction-form space-y-3 p-4 h-[340px]  rounded-lg w-[400px] bg-[#FFFFFF]">
+      <div className="flex items-center justify-center gap-2 w-full h-[80px] text-2xl font-bold text-center text-zinc-900">
+        <img src="/photos/logo.png" alt="Logo" className="w-48 h-32 mx-auto mb-2 pt-8" />
+      </div>
 
       <input
         name="amount"
@@ -52,7 +54,7 @@ export default function TransactionForm({ onAdd }) {
         placeholder="Amount"
         type="number"
         required
-        className="border px-2 py-1 rounded w-full"
+        className="px-2 py-1 rounded w-full border-2 border-zinc-900 text-zinc-500"
       />
 
       {/* Category Dropdown */}
@@ -61,11 +63,11 @@ export default function TransactionForm({ onAdd }) {
         value={form.category}
         onChange={handleChange}
         required
-        className="border px-2 py-1 rounded w-full text-zinc-500"
+        className="border-2 border-zinc-900 px-2 py-1 rounded w-full text-zinc-500"
       >
         <option value="">Select Category</option>
         {categories.map((cat, idx) => (
-          <option key={idx} value={cat} className='bg-black text-white'>{cat}</option>
+          <option key={idx} value={cat} className='text-zinc-500'>{cat}</option>
         ))}
       </select>
 
@@ -75,7 +77,7 @@ export default function TransactionForm({ onAdd }) {
         onChange={handleChange}
         placeholder="Description"
         required
-        className="border px-2 py-1 rounded w-full"
+        className="border-2 border-zinc-900 px-2 py-1 rounded w-full text-zinc-500"
       />
 
       {/* Hidden date input that will get automatically set */}

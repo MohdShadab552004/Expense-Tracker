@@ -61,27 +61,26 @@ const CategoryExpenses = () => {
   
 
   return (
-    <div className="flex flex-col gap-3 w-[65%] ">
+    <div className="category-expenses flex flex-col gap-3 w-[65%] text-zinc-900 rounded-lg p-2"> 
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-medium">Categories wise Expenses</h1>
       </div>
 
       <div className="flex flex-wrap gap-4">
         {categories.map((cat, idx) => {
-          const percentage = Math.min((cat.spent / cat.budget) * 100, 100);
 
           return (
             <section
               key={idx}
-              className="w-[220px] border  rounded-lg p-4 shadow hover:shadow-md transition-all"
+              className="category-cart w-[220px] rounded-lg p-4 shadow hover:shadow-md transition-all bg-[#FFFFFF]"
             >
-              <div className="w-[88px] h-[88px] rounded-lg flex items-center justify-center overflow-hidden">
-                <img src={cat.icon} alt={cat.name} className="w-full h-full object-contain" />
+              <div className="category-cart-img w-[88px] h-[88px] rounded-lg flex items-center justify-center overflow-hidden">
+                <img src={cat.icon} alt={cat.name} className="w-full h-full object-contain bg-[#ECF4F7]" />
               </div>
-              <h3 className="font-semibold mt-2 mb-4 text-zinc-300">{cat.name}</h3>
+              <h3 className="font-semibold mt-2 mb-4 text-zinc-900">{cat.name}</h3>
 
               <div className="w-full">
-                <p className="text-sm text-zinc-300 mb-1">
+                <p className="text-sm text-zinc-500 mb-1">
                   Expense: <span className="font-semibold">₹{categoriesdata?.[idx] || 0}</span>
                 </p>
             

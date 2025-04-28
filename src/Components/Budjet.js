@@ -9,10 +9,10 @@ const BudgetVsExpense = ({ expenses }) => {
     { name: 'Remaining', value: Math.max(budget - expenses, 0) },
   ];
 
-  const COLORS = ['#F87171', '#E5E7EB']; // red for expense, gray for remaining
+  const COLORS = ['rgb(54, 162, 235)', '#D5EDFF']; // red for expense, gray for remaining
 
   return (
-    <div className="rounded-xl border shadow-md w-[476px] h-[340px] p-4 relative overflow-hidden">
+    <div className="budjet rounded-xl shadow-md w-[470px] h-[340px] p-4 relative overflow-hidden bg-[#FFFFFF] text-zinc-900">
       
       {/* Header */}
       <div className="flex items-center justify-between mb-2">
@@ -21,7 +21,7 @@ const BudgetVsExpense = ({ expenses }) => {
       </div>
       
       <div className="mb-4">
-        <label htmlFor="budget" className="text-sm text-gray-600 mr-2">Enter Monthly Budget:</label>
+        <label htmlFor="budget" className="text-sm text-zinc-600 mr-2">Enter Monthly Budget:</label>
         <input
           id="budget"
           type="number"

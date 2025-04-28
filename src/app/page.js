@@ -3,10 +3,10 @@
 import { useState, useEffect, useContext } from 'react'
 import TransactionForm from '../Components/TransactionForm'
 import TransactionList from '../Components/TransactionList'
-import ExpenseChart from '../Components/ExpenseChart'
 import Budget from '@/Components/Budjet'
 import CategoryExpenses from '@/Components/CategoryExpenses'
 import { CategoryContext } from '@/context/CategoryContext'
+import CategoryChart from '@/Components/CategoryChart'
 
 export default function Home() {
   const [transactions, setTransactions] = useState([])
@@ -32,6 +32,8 @@ export default function Home() {
     setcategories(data.categories.expenses);
   }
   const updateTransaction = (updatedTx) => {
+    console.log(updatedTx);
+    
     setTransactions((prev) =>
       prev.map((tx) => (tx._id === updatedTx._id ? updatedTx : tx))
     )
@@ -48,13 +50,12 @@ export default function Home() {
   const total = transactions.reduce((acc, tx) => acc + tx.amount, 0)
   return (
     <>
-      
-      <div className="p-6 mx-auto space-y-4 w-full flex justify-between items-start flex-wrap">
+      <div className="page-1 p-6 mx-auto space-y-4 w-full flex justify-between items-start flex-wrap">
         <TransactionForm onAdd={addTransaction}/>
         <Budget expenses={total}/>
-        <ExpenseChart data={chartData} />
+        <CategoryChart/>
       </div>
-      <div className='categories-list flex justify-between items-start p-6 mt-4 '>
+      <div className='page-2 flex justify-between items-start p-6 mt-4 '>
         <CategoryExpenses/>
         <TransactionList transactions={transactions} onDelete={deleteTransaction} onUpdate={updateTransaction}/>
       </div> 

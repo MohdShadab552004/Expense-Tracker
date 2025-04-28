@@ -6,7 +6,7 @@ import {Categories} from '@/models/Transaction'
 export async function PUT(req, context) {
   await dbConnect()
 
-  const { params } =await context
+  const { params } = await context
   const data = await req.json()
 
   try {
